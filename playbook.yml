@@ -1,5 +1,5 @@
 - name: Deploy test project
-  hosts: localhost
+  hosts: forTZ
   gather_facts: false
   tasks:
     - name: Create and start service
