@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  mysql:
+    image: mariadb:10.3
+    environment:
+      MYSQL_ROOT_PASSWORD: 21197628
+      MYSQL_DATABASE: fortz
+      MYSQL_USER: tz
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_HOST: locahost
+    ports:
+      - "3306"
+    volumes:
+      -  ./dump_files:/docker-entrypoint-initdb.d
+    networks:
+      - testz
+    restart: on-failure
+volumes:
+  mysql:
+networks:
+  testz:
+    driver: bridge         

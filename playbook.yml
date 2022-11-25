@@ -1,0 +1,8 @@
+- name: Deploy test project
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Create and start service
+      docker_compose:
+        project_src: ./
+
