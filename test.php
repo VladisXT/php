@@ -9,7 +9,7 @@ foreach (array_combine($ipaddr, $id) as $ip => $number) {
 	mysqli_select_db($db_connection, $dbname) or die(mysqli_error($db_connection));
 	$result = mysqli_query($db_connection, "SELECT firstnames.firstname, lastnames.lastname FROM firstnames INNER JOIN lastnames ON firstnames.id=lastnames.id ORDER BY RAND() LIMIT 1") or die('error');
 	while ($row = mysqli_fetch_row($result)) {
-		echo "$row[0] $row[1] from $number<br/>";
+		echo "$row[0] $row[1] from $number\n";
 
 	}
 	mysqli_close($db_connection);
